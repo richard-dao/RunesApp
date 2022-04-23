@@ -1,11 +1,36 @@
 using System.Runtime.InteropServices;
+using PoniLCU;
+using static PoniLCU.LeagueClient;
 
 namespace TestApp
 {
     public partial class Form1 : Form
     {
+        class SavedRunes
+        {
+            string[] perks;
+            string primary;
+            string secondary;
+            string bodyName;
+            string body;
+            public SavedRunes(string[] pe, string pr, string se, string bdName, string bd) {
+                perks = pe;
+                primary = pr;
+                secondary = se;
+                bodyName = bdName;
+                body = bd;
+            
+            }
+        }
         int secondaryCounter = 0;
-        string[] queue = new string[2];
+        static string[] queue = new string[2];
+        static string[] selectedPerks = new string[9];
+        static string primaryRune = "";
+        static string secondaryRune = "";
+        static string bodyName = "";
+        static string stringPerks = "";
+        static List<SavedRunes> cached = new List<SavedRunes>();
+        static LeagueClient leagueClient = new LeagueClient(credentials.cmd);
         public Form1()
         {
             InitializeComponent();
@@ -17,187 +42,182 @@ namespace TestApp
             queue[1] = "0";
         }
 
-        // Primary Runes
 
-        private void button43_Click(object sender, EventArgs e)
+        
+        async static void changeRunes()
         {
-            Console.WriteLine("Test?");
-            Console.ReadLine();
+            var data = await leagueClient.Request(requestMethod.GET, "/lol-perks/v1/currentpage");
+            var dataDeserialized = Newtonsoft.Json.Linq.JObject.Parse(data);
+            var id = dataDeserialized["id"];
+            var path = "/lol-perks/v1/pages/" + id;
+            await leagueClient.Request(requestMethod.DELETE, path);
+            var body = "{\"name\":\"" + bodyName + "\",\"primaryStyleId\":" + primaryRune + ",\"subStyleId\":" + secondaryRune + ",\"selectedPerkIds\":" + stringPerks + ",\"current\":true}";
+            var request = await leagueClient.Request(requestMethod.POST, "lol-perks/v1/pages", body);
+            
+        }
 
-            // Import Runes
-
-
-            int[] perkIds = new int[9];
-
-            // Blocks
-
-            // Buttons 1-5 Control Primary Rune
-
-            var primaryStyle = "";
+        private static void stringifyPerks()
+        {
+            stringPerks = "[";
+            for (int i = 0; i < 9; i++)
+            {
+                if (i == 8)
+                {
+                    stringPerks += selectedPerks[i];
+                }
+                else
+                {
+                    stringPerks += selectedPerks[i] + ",";
+                }
+            }
+            stringPerks += "]";
+        }
+        private void getPrimary()
+        {
             if (button1.BackColor == SystemColors.Control)
             {
-                primaryStyle = "8000";
+                primaryRune = "8000";
             }
             else if (button2.BackColor == SystemColors.Control)
             {
-                primaryStyle = "8100";
+                primaryRune = "8100";
             }
             else if (button3.BackColor == SystemColors.Control)
             {
-                primaryStyle = "8200";
+                primaryRune = "8200";
             }
             else if (button4.BackColor == SystemColors.Control)
             {
-                primaryStyle = "8400";
+                primaryRune = "8400";
             }
             else if (button5.BackColor == SystemColors.Control)
             {
-                primaryStyle = "8300";
+                primaryRune = "8300";
             }
             else
             {
-                Console.WriteLine("No Primary Rune Chosen");
+                Console.WriteLine("Primary Rune Not Set");
             }
+        }
 
-            // Buttons 6-19 Control Primary Subrunes
+        private void getPrimaryKeystones()
+        {
+            // Buttons 6-19
 
-            // Buttons 6-9 Control First Keystone at Index 0
+            // Row 1 - Buttons 6-9
             if (button9.BackColor == SystemColors.Control)
             {
-                perkIds[0] = Int32.Parse(button9.Text);
+                selectedPerks[0] = button9.Text;
             }
             else if (button8.BackColor == SystemColors.Control)
             {
-                perkIds[0] = Int32.Parse(button8.Text);
+                selectedPerks[0] = button8.Text;
             }
             else if (button7.BackColor == SystemColors.Control)
             {
-                perkIds[0] = Int32.Parse(button7.Text);
+                selectedPerks[0] = button7.Text;
             }
             else if (button6.BackColor == SystemColors.Control)
             {
-                perkIds[0] = Int32.Parse(button6.Text);
+                selectedPerks[0] = button6.Text;
             }
             else
             {
-                Console.WriteLine("First Keystone Not Chosen");
+                Console.WriteLine("Row 1 Primary Keystone Not Set");
             }
 
-            // Buttons 10-12 Control Second Keystone at Index 1
+            // Row 2 - Buttons 10-12
             if (button12.BackColor == SystemColors.Control)
             {
-                perkIds[1] = Int32.Parse(button12.Text);
+                selectedPerks[1] = button12.Text;
             }
             else if (button11.BackColor == SystemColors.Control)
             {
-                perkIds[1] = Int32.Parse(button11.Text);
+                selectedPerks[1] = button11.Text;
             }
             else if (button10.BackColor == SystemColors.Control)
             {
-                perkIds[1] = Int32.Parse(button10.Text);
+                selectedPerks[1] = button10.Text;
             }
             else
             {
-                Console.WriteLine("Second Keystone Not Chosen");
+                Console.WriteLine("Row 2 Primary Keystone Not Set");
             }
-
-            // Buttons 13-15 Control Third Keystone at Index 2
+            
+            // Row 3 - Buttons 13-15
             if (button15.BackColor == SystemColors.Control)
             {
-                perkIds[2] = Int32.Parse(button15.Text);
+                selectedPerks[2] = button15.Text;
             }
             else if (button14.BackColor == SystemColors.Control)
             {
-                perkIds[2] = Int32.Parse(button14.Text);
+                selectedPerks[2] = button14.Text;
             }
             else if (button13.BackColor == SystemColors.Control)
             {
-                perkIds[2] = Int32.Parse(button13.Text);
+                selectedPerks[2] = button13.Text;
             }
             else
             {
-                Console.WriteLine("Third Keystone Not Chosen");
+                Console.WriteLine("Row 3 Primary Keystone Not Set");
             }
 
-            // Buttons 16 - 19 Control Fourth Keystone at Index 3
-
+            // Row 4 - Buttons 16-19
             if (button19.BackColor == SystemColors.Control)
             {
-                perkIds[3] = Int32.Parse(button19.Text);
+                selectedPerks[3] = button19.Text;
             }
             else if (button18.BackColor == SystemColors.Control)
             {
-                perkIds[3] = Int32.Parse(button18.Text);
+                selectedPerks[3] = button18.Text;
             }
             else if (button17.BackColor == SystemColors.Control)
             {
-                perkIds[3] = Int32.Parse(button17.Text);
+                selectedPerks[3] = button17.Text;
             }
             else if (button16.BackColor == SystemColors.Control)
             {
-                perkIds[3] = Int32.Parse(button16.Text);
+                selectedPerks[3] = button16.Text;
+            }
+            
+        }
+        private void getSecondaryKeystones()
+        {
+            if (queue[0] == "0")
+            {
+                Console.WriteLine("Secondary Keystone Runes Not Selected");
             }
             else
             {
-                Console.WriteLine("Fourth Keytsone Not Chosen");
+                selectedPerks[4] = queue[0];
+                selectedPerks[5] = queue[1];
             }
 
-            // Buttons 20 - 23 Control Secondary Rune
+        }
 
-            var secondaryStyle = "";
-
-            if (button23.BackColor == SystemColors.Control)
-            {
-                if (button23.Text == "Precision")
-                {
-                    secondaryStyle = "8000";
-                }
-                else
-                {
-                    secondaryStyle = "8100";
-                }
-            }
-            else if (button22.BackColor == SystemColors.Control)
-            {
-                if (button22.Text == "Domination")
-                {
-                    secondaryStyle = "8100";
-                }
-                else
-                {
-                    secondaryStyle = "8200";
-                }
-            }
-            else if (button21.BackColor == SystemColors.Control)
-            {
-                if (button21.Text == "Sorcery")
-                {
-                    secondaryStyle = "8200";
-                }
-                else
-                {
-                    secondaryStyle = "8400";
-                }
-            }
-            else if (button20.BackColor == SystemColors.Control)
-            {
-                if (button20.Text == "Resolve")
-                {
-                    secondaryStyle = "8400";
-                }
-                else
-                {
-                    secondaryStyle = "8300";
-                }
-            }
-            else
-            {
-                Console.WriteLine("Secondary Rune Not Chosen");
-            }
-
-            // Buttons 24-33 Control Secondary Subrunes
-
-
+        private void export()
+        {
+            getPrimary();
+            getPrimaryKeystones();
+            getSecondaryKeystones();
+            stringifyPerks();
+        }
+        private void button43_Click(object sender, EventArgs e)
+        {
+            // Export Button
+            export();
+            changeRunes();
+            Console.WriteLine(primaryRune);
+            Console.WriteLine(secondaryRune);
+            Console.WriteLine(selectedPerks[0]);
+            Console.WriteLine(selectedPerks[1]);
+            Console.WriteLine(selectedPerks[2]);
+            Console.WriteLine(selectedPerks[3]);
+            Console.WriteLine(selectedPerks[4]);
+            Console.WriteLine(selectedPerks[5]);
+            Console.WriteLine(selectedPerks[6]);
+            Console.WriteLine(selectedPerks[7]);
+            Console.WriteLine(selectedPerks[8]);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -755,6 +775,10 @@ namespace TestApp
 
         // Secondary Runes
 
+        string[] row1 = new string[3];
+        string[] row2 = new string[3];
+        string[] row3 = new string[4];
+
         private void button23_Click(object sender, EventArgs e)
         {
             // Will always either be Precision or Domination
@@ -799,6 +823,7 @@ namespace TestApp
 
         private void setPrecisionSecondary()
         {
+            secondaryRune = "8000";
             button33.Visible = false;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
@@ -822,10 +847,25 @@ namespace TestApp
             button32.Text = "8014";
             button31.Text = "8017";
             button30.Text = "8299";
+
+            row1[0] = button26.Text;
+            row1[1] = button25.Text;
+            row1[2] = button24.Text;
+            row2[0] = button29.Text;
+            row2[1] = button28.Text;
+            row2[2] = button27.Text;
+            row3[0] = "0";
+            row3[1] = button32.Text;
+            row3[2] = button31.Text;
+            row3[3] = button30.Text;
+            
+
+
         }
 
         private void setDominationSecondary()
         {
+            secondaryRune = "8100";
             button33.Visible = true;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
@@ -850,6 +890,17 @@ namespace TestApp
             button32.Text = "8134";
             button31.Text = "8105";
             button30.Text = "8106";
+
+            row1[0] = button26.Text;
+            row1[1] = button25.Text;
+            row1[2] = button24.Text;
+            row2[0] = button29.Text;
+            row2[1] = button28.Text;
+            row2[2] = button27.Text;
+            row3[0] = button33.Text;
+            row3[1] = button32.Text;
+            row3[2] = button31.Text;
+            row3[3] = button30.Text;
         }
 
 
@@ -892,6 +943,7 @@ namespace TestApp
         }
         private void setSorcerySecondary()
         {
+            secondaryRune = "8200";
             button33.Visible = false;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
@@ -914,6 +966,17 @@ namespace TestApp
             button32.Text = "8237";
             button31.Text = "8232";
             button30.Text = "8236";
+
+            row1[0] = button26.Text;
+            row1[1] = button25.Text;
+            row1[2] = button24.Text;
+            row2[0] = button29.Text;
+            row2[1] = button28.Text;
+            row2[2] = button27.Text;
+            row3[0] = "0";
+            row3[1] = button32.Text;
+            row3[2] = button31.Text;
+            row3[3] = button30.Text;
         }
 
 
@@ -956,6 +1019,7 @@ namespace TestApp
 
         private void setResolveSecondary()
         {
+            secondaryRune = "8400";
             button33.Visible = false;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
@@ -978,6 +1042,17 @@ namespace TestApp
             button32.Text = "8451";
             button31.Text = "8453";
             button30.Text = "8242";
+
+            row1[0] = button26.Text;
+            row1[1] = button25.Text;
+            row1[2] = button24.Text;
+            row2[0] = button29.Text;
+            row2[1] = button28.Text;
+            row2[2] = button27.Text;
+            row3[0] = "0";
+            row3[1] = button32.Text;
+            row3[2] = button31.Text;
+            row3[3] = button30.Text;
 
         }
 
@@ -1019,6 +1094,7 @@ namespace TestApp
 
         private void setInspirationSecondary()
         {
+            secondaryRune = "8300";
             button33.Visible = false;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
@@ -1042,6 +1118,16 @@ namespace TestApp
             button31.Text = "8410";
             button30.Text = "8352";
 
+            row1[0] = button26.Text;
+            row1[1] = button25.Text;
+            row1[2] = button24.Text;
+            row2[0] = button29.Text;
+            row2[1] = button28.Text;
+            row2[2] = button27.Text;
+            row3[0] = "0";
+            row3[1] = button32.Text;
+            row3[2] = button31.Text;
+            row3[3] = button30.Text;
         }
 
 
@@ -1052,6 +1138,7 @@ namespace TestApp
             if (button36.BackColor != SystemColors.Control)
             {
                 rowReset36();
+                selectedPerks[6] = "5008";
             }
             
         }
@@ -1067,6 +1154,7 @@ namespace TestApp
             if (button35.BackColor != SystemColors.Control)
             {
                 rowReset35();
+                selectedPerks[6] = "5005";
             }
 
         }
@@ -1082,6 +1170,7 @@ namespace TestApp
             if (button34.BackColor != SystemColors.Control)
             {
                 rowReset34();
+                selectedPerks[6] = "5007";
             }
 
         }
@@ -1097,6 +1186,7 @@ namespace TestApp
             if (button39.BackColor != SystemColors.Control)
             {
                 rowReset39();
+                selectedPerks[7] = "5008";
             }
 
         }
@@ -1112,6 +1202,7 @@ namespace TestApp
             if (button38.BackColor != SystemColors.Control)
             {
                 rowReset38();
+                selectedPerks[7] = "5002";
             }
 
         }
@@ -1127,6 +1218,7 @@ namespace TestApp
             if (button37.BackColor != SystemColors.Control)
             {
                 rowReset37();
+                selectedPerks[7] = "5003";
             }
 
         }
@@ -1142,6 +1234,7 @@ namespace TestApp
             if (button42.BackColor != SystemColors.Control)
             {
                 rowReset42();
+                selectedPerks[8] = "5001";
             }
 
         }
@@ -1157,6 +1250,7 @@ namespace TestApp
             if (button41.BackColor != SystemColors.Control)
             {
                 rowReset41();
+                selectedPerks[8] = "5002";
             }
 
         }
@@ -1172,6 +1266,7 @@ namespace TestApp
             if (button40.BackColor != SystemColors.Control)
             {
                 rowReset40();
+                selectedPerks[8] = "5003";
             }
 
         }
@@ -1442,28 +1537,91 @@ namespace TestApp
                 queuePop();
                 queue[1] = id;
             }
-            Console.WriteLine(queue[0]);
-            Console.WriteLine(queue[1]);
+        }
+
+        private void row1Checker()
+        {
+            bool inQueue = false;
+            for (int i = 0; i < 3; i++)
+            {
+                if (queue[0] == row1[i])
+                {
+                    inQueue = true;
+                    break;
+                }
+                else if (queue[1] == row1[i])
+                {
+                    inQueue = true;
+                    break;
+                }
+            }
+            if (!inQueue)
+            {
+                button24.BackColor = SystemColors.Desktop;
+                button25.BackColor = SystemColors.Desktop;
+                button26.BackColor = SystemColors.Desktop;
+            }
         }
 
         private void button24_Click(object sender, EventArgs e)
         {
-            rowReset24();
-            if (queue[0] == "0" && queue[1] == "0")
-            {
-                queuePush(button24.Text);
-            }
-            else
-            {
-                if (queue[0] != "0" && queue[1] == "0")
-                {
 
+            if (button24.BackColor != SystemColors.Control)
+            {
+                rowReset24();
+                string buttonText = button24.Text;
+                if (queue[0] == "0" && queue[1] == "0")
+                {
+                    queuePush(buttonText);
                 }
                 else
                 {
+                    if (queue[0] != "0" && queue[1] == "0") // One Item
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (row1[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
 
+                    }
+                    else // Two Items
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (row1[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                            else if (row1[i] == queue[1])
+                            {
+                                inRow = true;
+                                queue[1] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
                 }
             }
+            row2Checker();
+            row3Checker();
         }
 
         private void rowReset24()
@@ -1476,7 +1634,62 @@ namespace TestApp
 
         private void button25_Click(object sender, EventArgs e)
         {
-            
+            if (button25.BackColor != SystemColors.Control)
+            {
+                rowReset25();
+                string buttonText = button25.Text;
+                if (queue[0] == "0" && queue[1] == "0")
+                {
+                    queuePush(buttonText);
+                }
+                else
+                {
+                    if (queue[0] != "0" && queue[1] == "0") // One Item
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (row1[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                    else // Two Items
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (row1[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                            else if (row1[i] == queue[1])
+                            {
+                                inRow = true;
+                                queue[1] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                }
+            }
+            row2Checker();
+            row3Checker();
         }
 
         private void rowReset25()
@@ -1488,7 +1701,62 @@ namespace TestApp
 
         private void button26_Click(object sender, EventArgs e)
         {
-            
+            if (button26.BackColor != SystemColors.Control)
+            {
+                rowReset26();
+                string buttonText = button26.Text;
+                if (queue[0] == "0" && queue[1] == "0")
+                {
+                    queuePush(buttonText);
+                }
+                else
+                {
+                    if (queue[0] != "0" && queue[1] == "0") // One Item
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (row1[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                    else // Two Items
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (row1[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                            else if (row1[i] == queue[1])
+                            {
+                                inRow = true;
+                                queue[1] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                }
+            }
+            row2Checker();
+            row3Checker();
         }
 
         private void rowReset26()
@@ -1498,9 +1766,88 @@ namespace TestApp
             button26.BackColor = SystemColors.Control;
         }
 
+        private void row2Checker()
+        {
+            bool inQueue = false;
+            for (int i = 0; i < 3; i++)
+            {
+                if (queue[0] == row2[i])
+                {
+                    inQueue = true;
+                    break;
+                }
+                else if (queue[1] == row2[i])
+                {
+                    inQueue = true;
+                    break;
+                }
+            }
+            if (!inQueue)
+            {
+                button29.BackColor = SystemColors.Desktop;
+                button28.BackColor = SystemColors.Desktop;
+                button27.BackColor = SystemColors.Desktop;
+            }
+        }
+
         private void button29_Click(object sender, EventArgs e)
         {
-            
+            if (button29.BackColor != SystemColors.Control)
+            {
+                rowReset29();
+                string buttonText = button29.Text;
+                if (queue[0] == "0" && queue[1] == "0")
+                {
+                    queuePush(buttonText);
+                }
+                else
+                {
+                    if (queue[0] != "0" && queue[1] == "0") // One Item
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (row2[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                    else // Two Items
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (row2[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                            else if (row2[i] == queue[1])
+                            {
+                                inRow = true;
+                                queue[1] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                }
+            }
+            row1Checker();
+            row3Checker();
         }
 
         private void rowReset29()
@@ -1511,7 +1858,62 @@ namespace TestApp
         }
         private void button28_Click(object sender, EventArgs e)
         {
-            
+            if (button28.BackColor != SystemColors.Control)
+            {
+                rowReset28();
+                string buttonText = button28.Text;
+                if (queue[0] == "0" && queue[1] == "0")
+                {
+                    queuePush(buttonText);
+                }
+                else
+                {
+                    if (queue[0] != "0" && queue[1] == "0") // One Item
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (row2[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                    else // Two Items
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (row2[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                            else if (row2[i] == queue[1])
+                            {
+                                inRow = true;
+                                queue[1] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                }
+            }
+            row1Checker();
+            row3Checker();
         }
 
         private void rowReset28()
@@ -1523,7 +1925,62 @@ namespace TestApp
 
         private void button27_Click(object sender, EventArgs e)
         {
-            
+            if (button27.BackColor != SystemColors.Control)
+            {
+                rowReset27();
+                string buttonText = button27.Text;
+                if (queue[0] == "0" && queue[1] == "0")
+                {
+                    queuePush(buttonText);
+                }
+                else
+                {
+                    if (queue[0] != "0" && queue[1] == "0") // One Item
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (row2[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                    else // Two Items
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            if (row2[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                            else if (row2[i] == queue[1])
+                            {
+                                inRow = true;
+                                queue[1] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                }
+            }
+            row1Checker();
+            row3Checker();
         }
 
         private void rowReset27()
@@ -1531,6 +1988,333 @@ namespace TestApp
             button29.BackColor = SystemColors.Desktop;
             button28.BackColor = SystemColors.Desktop;
             button27.BackColor = SystemColors.Control;
+        }
+
+
+        private void row3Checker()
+        {
+            bool inQueue = false;
+            for (int i = 0; i < 4; i++)
+            {
+                if (queue[0] == row3[i])
+                {
+                    inQueue = true;
+                    break;
+                }
+                else if (queue[1] == row3[i])
+                {
+                    inQueue = true;
+                    break;
+                }
+            }
+            if (!inQueue)
+            {
+                button33.BackColor = SystemColors.Desktop;
+                button32.BackColor = SystemColors.Desktop;
+                button31.BackColor = SystemColors.Desktop;
+                button30.BackColor = SystemColors.Desktop;
+            }
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            if (button33.BackColor != SystemColors.Control)
+            {
+                rowReset33();
+                string buttonText = button33.Text;
+                if (queue[0] == "0" && queue[1] == "0")
+                {
+                    queuePush(buttonText);
+                }
+                else
+                {
+                    if (queue[0] != "0" && queue[1] == "0") // One Item
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (row3[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                    else // Two Items
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (row3[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                            else if (row3[i] == queue[1])
+                            {
+                                inRow = true;
+                                queue[1] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                }
+            }
+            row1Checker();
+            row2Checker();
+        }
+
+        private void rowReset33()
+        {
+            button33.BackColor = SystemColors.Control;
+            button32.BackColor = SystemColors.Desktop;
+            button31.BackColor = SystemColors.Desktop;
+            button30.BackColor = SystemColors.Desktop;
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            if (button32.BackColor != SystemColors.Control)
+            {
+                rowReset32();
+                string buttonText = button32.Text;
+                if (queue[0] == "0" && queue[1] == "0")
+                {
+                    queuePush(buttonText);
+                }
+                else
+                {
+                    if (queue[0] != "0" && queue[1] == "0") // One Item
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (row3[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                    else // Two Items
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (row3[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                            else if (row3[i] == queue[1])
+                            {
+                                inRow = true;
+                                queue[1] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                }
+            }
+            row1Checker();
+            row2Checker();
+        }
+
+        private void rowReset32()
+        {
+            button33.BackColor = SystemColors.Desktop;
+            button32.BackColor = SystemColors.Control;
+            button31.BackColor = SystemColors.Desktop;
+            button30.BackColor = SystemColors.Desktop;
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            if (button31.BackColor != SystemColors.Control)
+            {
+                rowReset31();
+                string buttonText = button31.Text;
+                if (queue[0] == "0" && queue[1] == "0")
+                {
+                    queuePush(buttonText);
+                }
+                else
+                {
+                    if (queue[0] != "0" && queue[1] == "0") // One Item
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (row3[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                    else // Two Items
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (row3[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                            else if (row3[i] == queue[1])
+                            {
+                                inRow = true;
+                                queue[1] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                }
+            }
+            row1Checker();
+            row2Checker();
+        }
+
+        private void rowReset31()
+        {
+            button33.BackColor = SystemColors.Desktop;
+            button32.BackColor = SystemColors.Desktop;
+            button31.BackColor = SystemColors.Control;
+            button30.BackColor = SystemColors.Desktop;
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            if (button30.BackColor != SystemColors.Control)
+            {
+                rowReset30();
+                string buttonText = button30.Text;
+                if (queue[0] == "0" && queue[1] == "0")
+                {
+                    queuePush(buttonText);
+                }
+                else
+                {
+                    if (queue[0] != "0" && queue[1] == "0") // One Item
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (row3[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                    else // Two Items
+                    {
+                        bool inRow = false;
+                        for (int i = 0; i < 4; i++)
+                        {
+                            if (row3[i] == queue[0])
+                            {
+                                inRow = true;
+                                queue[0] = buttonText;
+                                break;
+                            }
+                            else if (row3[i] == queue[1])
+                            {
+                                inRow = true;
+                                queue[1] = buttonText;
+                                break;
+                            }
+                        }
+                        if (!inRow)
+                        {
+                            queuePush(buttonText);
+                        }
+
+                    }
+                }
+            }
+            row1Checker();
+            row2Checker();
+        }
+
+        private void rowReset30()
+        {
+            button33.BackColor = SystemColors.Desktop;
+            button32.BackColor = SystemColors.Desktop;
+            button31.BackColor = SystemColors.Desktop;
+            button30.BackColor = SystemColors.Control;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button44_Click(object sender, EventArgs e)
+        {
+            export();
+            SavedRunes a = new SavedRunes(selectedPerks, primaryRune, secondaryRune, bodyName, stringPerks);
+            cached.Add(a);
+
+            
+        }
+
+        private void button45_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button46_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            bodyName = textBox1.Text;
         }
     }
  }
