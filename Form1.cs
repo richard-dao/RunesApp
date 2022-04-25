@@ -39,6 +39,12 @@ namespace TestApp
         static string stringPerks = "";
         List<SavedConfig> cached = new List<SavedConfig>();
         static LeagueClient leagueClient = new LeagueClient(credentials.cmd);
+
+        private const int CB_SETCUEBANNER = 0x1703;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
+        private static extern int SendMessage(IntPtr hWnd, int msg, int wParam, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string lParam);
+
         public Form1()
         {
             InitializeComponent();
@@ -51,8 +57,279 @@ namespace TestApp
             loadFromJSON();
         }
 
+        private void readSaved()
+        {
+            Console.WriteLine(primaryRune);
+            Console.Write(secondaryRune);
+            if (primaryRune == "8000")
+            {
+                setPrecisionPrimary(); // Sets precision keystones ids
+                resetPrecision(); // Sets selected background for precision and deletes all other images 
+                removePrecisionSecondary(); // Sets image for secondary runes
+                secondaryIDPrecisionPrimary();
+            }
+            else if (primaryRune == "8100")
+            {
+                setDominationPrimary();
+                resetDomination();
+                removeDominationSecondary();
+                secondaryIDDominationPrimary();
+            }
+            else if (primaryRune == "8200")
+            {
+                setSorceryPrimary();
+                resetSorcery();
+                removeSorcerySecondary();
+                secondaryIDSorceryPrimary();
+            }
+            else if (primaryRune == "8400")
+            {
+                setResolvePrimary();
+                resetResolve();
+                removeResolveSecondary();
+                secondaryIDResolvePrimary();
+            }
+            else if (primaryRune == "8300")
+            {
+                setInspirationPrimary();
+                resetInspiration();
+                removeInspirationSecondary();
+                secondaryIDInspirationPrimary();
+            }
 
-        
+            Console.WriteLine("\n----------");
+            Console.WriteLine(button23.Text);
+            Console.WriteLine(button22.Text);
+            Console.WriteLine(button21.Text);
+            Console.WriteLine(button20.Text);
+            
+            if (secondaryRune == "8000")
+            {
+                setPrecisionSecondary();
+                if (button23.Text == "8000")
+                {
+                    button23.BackColor = SystemColors.Control;
+                }
+                else if (button22.Text == "8000")
+                {
+                    button22.BackColor = SystemColors.Control;
+                }
+                else if (button21.Text == "8000")
+                {
+                    button21.BackColor = SystemColors.Control;
+                }
+                else if (button20.Text == "8000")
+                {
+                    button20.BackColor = SystemColors.Control;
+                }
+                
+            }
+            else if (secondaryRune == "8100")
+            {
+                setDominationSecondary();
+                if (button23.Text == "8100")
+                {
+                    button23.BackColor = SystemColors.Control;
+                }
+                else if (button22.Text == "8100")
+                {
+                    button22.BackColor = SystemColors.Control;
+                }
+                else if (button21.Text == "8100")
+                {
+                    button21.BackColor = SystemColors.Control;
+                }
+                else if (button20.Text == "8100")
+                {
+                    button20.BackColor = SystemColors.Control;
+                }
+            }
+            else if (secondaryRune == "8200")
+            {
+                setSorcerySecondary();
+                if (button23.Text == "8200")
+                {
+                    button23.BackColor = SystemColors.Control;
+                }
+                else if (button22.Text == "8200")
+                {
+                    button22.BackColor = SystemColors.Control;
+                }
+                else if (button21.Text == "8200")
+                {
+                    button21.BackColor = SystemColors.Control;
+                }
+                else if (button20.Text == "8200")
+                {
+                    button20.BackColor = SystemColors.Control;
+                }
+            }
+            else if (secondaryRune == "8400")
+            {
+                setResolveSecondary();
+                if (button23.Text == "8400")
+                {
+                    button23.BackColor = SystemColors.Control;
+                }
+                else if (button22.Text == "8400")
+                {
+                    button22.BackColor = SystemColors.Control;
+                }
+                else if (button21.Text == "8400")
+                {
+                    button21.BackColor = SystemColors.Control;
+                }
+                else if (button20.Text == "8400")
+                {
+                    button20.BackColor = SystemColors.Control;
+                }
+            }
+            else if (secondaryRune == "8300")
+            {
+                setInspirationSecondary();
+                if (button23.Text == "8300")
+                {
+                    button23.BackColor = SystemColors.Control;
+                }
+                else if (button22.Text == "8300")
+                {
+                    button22.BackColor = SystemColors.Control;
+                }
+                else if (button21.Text == "8300")
+                {
+                    button21.BackColor = SystemColors.Control;
+                }
+                else if (button20.Text == "8300")
+                {
+                    button20.BackColor = SystemColors.Control;
+                }
+            }
+            
+           
+
+            setStatModsText();
+
+            for (int i = 0; i < selectedPerks.Length; i++)
+            {
+                foreach (Control c in Controls)
+                {
+                    Button b = c as Button;
+                    if (b != null)
+                    {
+                        if (b.Text == selectedPerks[i])
+                        {
+                            b.BackColor = SystemColors.Control;
+                        }
+                    }
+                }
+            }
+
+            if (primaryRune == "8000")
+            {
+                removePrecisionSecondary();
+            }
+            else if (primaryRune == "8100")
+            {
+                removeDominationSecondary();
+            }
+            else if (primaryRune == "8200")
+            {
+                removeSorcerySecondary();
+            }
+            else if (primaryRune == "8400")
+            {
+                removeResolveSecondary();
+            }
+            else if (primaryRune == "8300")
+            {
+                removeInspirationSecondary();
+            }
+
+
+        }
+
+        private void secondaryIDPrecisionPrimary()
+        {
+            button23.Text = "8100";
+            button22.Text = "8200";
+            button21.Text = "8400";
+            button20.Text = "8300";
+        }
+
+        private void secondaryIDDominationPrimary()
+        {
+            button23.Text = "8000";
+            button22.Text = "8200";
+            button21.Text = "8400";
+            button20.Text = "8300";
+        }
+
+        private void secondaryIDSorceryPrimary()
+        {
+            button23.Text = "8000";
+            button22.Text = "8100";
+            button21.Text = "8400";
+            button20.Text = "8300";
+        }
+
+        private void secondaryIDResolvePrimary()
+        {
+            button23.Text = "8000";
+            button22.Text = "8100";
+            button21.Text = "8200";
+            button20.Text = "8300";
+        }
+
+        private void secondaryIDInspirationPrimary()
+        {
+            button23.Text = "8000";
+            button22.Text = "8100";
+            button21.Text = "8200";
+            button20.Text = "8400";
+        }
+
+        private void setStatModsText()
+        {
+            if (selectedPerks[6] == "5008")
+            {
+                button36.Text = "5008";
+            }
+            else if (selectedPerks[6] == "5005")
+            {
+                button35.Text = "5005";
+            }
+            else if (selectedPerks[6] == "5007")
+            {
+                button34.Text = "5007";
+            }
+
+            if (selectedPerks[7] == "5008")
+            {
+                button39.Text = "5008";
+            }
+            else if (selectedPerks[7] == "5002")
+            {
+                button38.Text = "5002";
+            }
+            else if (selectedPerks[7] == "5003")
+            {
+                button37.Text = "5003";
+            }
+
+            if (selectedPerks[8] == "5001")
+            {
+                button42.Text = "5001";
+            }
+            else if (selectedPerks[8] == "5002")
+            {
+                button41.Text = "5002";
+            }
+            else if (selectedPerks[8] == "5003")
+            {
+                button40.Text = "5003";
+            }
+
+        }
         async static void changeRunes()
         {
             var data = await leagueClient.Request(requestMethod.GET, "/lol-perks/v1/currentpage");
@@ -2299,11 +2576,26 @@ namespace TestApp
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Console.WriteLine(comboBox1.SelectedIndex);
+            if (comboBox1.SelectedIndex == 0)
+            {
+                resetPrecision();
+            }
+            else
+            {
+                SavedConfig curr = cached[comboBox1.SelectedIndex - 1];
+                primaryRune = curr.primary;
+                secondaryRune = curr.secondary;
+                selectedPerks = curr.keystones;
+                bodyName = curr.name;
+                readSaved();
+                export();
+            }
         }
 
         private void loadFromJSON()
         {
+            SendMessage(this.comboBox1.Handle, CB_SETCUEBANNER, 0, "Select a Champion");
             var currentDirectory = Environment.CurrentDirectory;
             string path = currentDirectory + "\\saved.json";
 
@@ -2316,13 +2608,33 @@ namespace TestApp
 
 
             var linesRead = File.ReadLines(path);
-            foreach(var lineRead in linesRead)
+            foreach (var lineRead in linesRead)
             {
                 SavedConfig deserialized = JsonConvert.DeserializeObject<SavedConfig>(lineRead);
                 if (deserialized.name != "")
                 {
                     cached.Add(deserialized);
                 }
+            }
+
+            updateComboBox();
+
+        }
+
+        private void updateComboBox()
+        {
+            comboBox1.Items.Clear();
+            comboBox1.ResetText();
+            comboBox1.Items.Add("Add new configuration");
+
+            for (int i = 0; i < cached.Count; i++)
+            {
+                comboBox1.Items.Add(cached[i].name);
+            }
+
+            for (int i = 0; i < comboBox1.Items.Count; i++)
+            {
+                Console.WriteLine(comboBox1.Items[i] + " " + i.ToString());
             }
         }
 
@@ -2363,7 +2675,7 @@ namespace TestApp
                         // else, add new configuration
                         Console.WriteLine("cached[" + i.ToString() + "] is equal to " + cached[i].name);
                     }
-                    if (!inCached)
+                    if (!inCached && a.name != "")
                     {
                         cached.Add(a);
                     }
@@ -2396,12 +2708,13 @@ namespace TestApp
             // Save
             export();
             saveToJSON();
-            loadFromJSON();
+            updateComboBox();
         }
 
         private void button45_Click(object sender, EventArgs e)
         {
             // Load
+
         }
 
         private void button46_Click(object sender, EventArgs e)
