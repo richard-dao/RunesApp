@@ -1,25 +1,33 @@
 using System.Runtime.InteropServices;
 using PoniLCU;
 using static PoniLCU.LeagueClient;
+using Newtonsoft.Json;
 
 namespace TestApp
 {
     public partial class Form1 : Form
     {
-        class SavedRunes
+        class SavedConfig
         {
-            string[] perks;
-            string primary;
-            string secondary;
-            string bodyName;
-            string body;
-            public SavedRunes(string[] pe, string pr, string se, string bdName, string bd) {
-                perks = pe;
-                primary = pr;
-                secondary = se;
-                bodyName = bdName;
-                body = bd;
-            
+            public string primary;
+            public string secondary;
+            public string[] keystones;
+            public string name;
+
+            public SavedConfig()
+            {
+                primary = null;
+                secondary = null;
+                keystones = null;
+                name = null;
+            }
+
+            public SavedConfig(string p, string s, string[] ks, string n)
+            {
+                primary = p;
+                secondary = s;
+                keystones = ks;
+                name = n;
             }
         }
         int secondaryCounter = 0;
@@ -29,7 +37,7 @@ namespace TestApp
         static string secondaryRune = "";
         static string bodyName = "";
         static string stringPerks = "";
-        static List<SavedRunes> cached = new List<SavedRunes>();
+        List<SavedConfig> cached = new List<SavedConfig>();
         static LeagueClient leagueClient = new LeagueClient(credentials.cmd);
         public Form1()
         {
@@ -40,6 +48,7 @@ namespace TestApp
         {
             queue[0] = "0";
             queue[1] = "0";
+            loadFromJSON();
         }
 
 
@@ -2293,22 +2302,103 @@ namespace TestApp
 
         }
 
-        private void button44_Click(object sender, EventArgs e)
+        private void loadFromJSON()
         {
-            export();
-            SavedRunes a = new SavedRunes(selectedPerks, primaryRune, secondaryRune, bodyName, stringPerks);
-            cached.Add(a);
+            var currentDirectory = Environment.CurrentDirectory;
+            string path = currentDirectory + "\\saved.json";
 
-            
+            bool fileExists = File.Exists(path);
+
+            if (!fileExists)
+            {
+                File.Create(path).Close();
+            }
+
+
+            var linesRead = File.ReadLines(path);
+            foreach(var lineRead in linesRead)
+            {
+                SavedConfig deserialized = JsonConvert.DeserializeObject<SavedConfig>(lineRead);
+                if (deserialized.name != "")
+                {
+                    cached.Add(deserialized);
+                }
+            }
+        }
+
+        private void saveToJSON()
+        {
+            SavedConfig a = new SavedConfig(primaryRune, secondaryRune, selectedPerks, bodyName);
+            var currentDirectory = Environment.CurrentDirectory;
+            string path = currentDirectory + "\\saved.json";
+
+            bool fileExists = File.Exists(path);
+
+            if (fileExists)
+            {
+                if (cached.Count == 0)
+                {
+                    string output = JsonConvert.SerializeObject(a);
+                    File.AppendAllLines(path, new string[] { output });
+                }
+                else
+                {
+                    Console.WriteLine("Makes it here");
+                    // Check if this configuration has already been saved
+                    Console.WriteLine(cached.Count);
+                    for (int i = 0; i < cached.Count; i++)
+                    {
+                        // if yes, update it with new configuration
+                        if (cached[i].name == a.name)
+                        {
+                            cached[i] = a;
+                        }
+                        // else, add new configuration
+                        else
+                        {
+                            cached.Add(a);
+                        }
+                        Console.WriteLine("cached[" + i.ToString() + "] is equal to " + cached[i].name);
+                    }
+
+                    File.Delete(path);
+                    File.Create(path).Close();
+                    for (int i = 0; i < cached.Count; i++)
+                    {
+                        string output = JsonConvert.SerializeObject(cached[i]);
+                        Console.WriteLine(output);
+                        File.AppendAllLines(path, new string[] { output });
+                    }
+                }
+            }
+            else
+            {
+                // Create file and add new configuration
+                string output = JsonConvert.SerializeObject(a);
+                File.Create(path).Close();
+                File.AppendAllLines(path, new string[] { output });
+
+            }
+
+        }
+
+        private async void button44_Click(object sender, EventArgs e)
+        {
+            // Save
+            export();
+            saveToJSON();
+            loadFromJSON();
         }
 
         private void button45_Click(object sender, EventArgs e)
         {
-
+            // Load
+            loadFromJSON();
         }
 
         private void button46_Click(object sender, EventArgs e)
         {
+            // Delete
 
         }
 
