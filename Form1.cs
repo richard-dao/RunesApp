@@ -2334,6 +2334,10 @@ namespace TestApp
 
             bool fileExists = File.Exists(path);
 
+            cached.Clear();
+            loadFromJSON();
+
+
             if (fileExists)
             {
                 if (cached.Count == 0)
@@ -2346,22 +2350,27 @@ namespace TestApp
                     Console.WriteLine("Makes it here");
                     // Check if this configuration has already been saved
                     Console.WriteLine(cached.Count);
+                    bool inCached = false;
                     for (int i = 0; i < cached.Count; i++)
                     {
                         // if yes, update it with new configuration
                         if (cached[i].name == a.name)
                         {
+                            inCached = true;
                             cached[i] = a;
+                            break;
                         }
                         // else, add new configuration
-                        else
-                        {
-                            cached.Add(a);
-                        }
                         Console.WriteLine("cached[" + i.ToString() + "] is equal to " + cached[i].name);
+                    }
+                    if (!inCached)
+                    {
+                        cached.Add(a);
                     }
 
                     File.Delete(path);
+                    fileExists = File.Exists(path);
+                    Console.WriteLine(fileExists);
                     File.Create(path).Close();
                     for (int i = 0; i < cached.Count; i++)
                     {
@@ -2393,7 +2402,6 @@ namespace TestApp
         private void button45_Click(object sender, EventArgs e)
         {
             // Load
-            loadFromJSON();
         }
 
         private void button46_Click(object sender, EventArgs e)
