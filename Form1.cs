@@ -2679,17 +2679,9 @@ namespace TestApp
                     {
                         cached.Add(a);
                     }
+                    updateJSON();
 
-                    File.Delete(path);
-                    fileExists = File.Exists(path);
-                    Console.WriteLine(fileExists);
-                    File.Create(path).Close();
-                    for (int i = 0; i < cached.Count; i++)
-                    {
-                        string output = JsonConvert.SerializeObject(cached[i]);
-                        Console.WriteLine(output);
-                        File.AppendAllLines(path, new string[] { output });
-                    }
+                   
                 }
             }
             else
@@ -2709,17 +2701,43 @@ namespace TestApp
             export();
             saveToJSON();
             updateComboBox();
-        }
-
-        private void button45_Click(object sender, EventArgs e)
-        {
-            // Load
-
+            textBox1.Text = null;
         }
 
         private void button46_Click(object sender, EventArgs e)
         {
             // Delete
+            if (comboBox1.SelectedIndex == 0)
+            {
+                // Do nothing, don't delete anything
+            }
+            else
+            {
+                cached.RemoveAt(comboBox1.SelectedIndex - 1);
+                updateJSON();
+                updateComboBox();
+                resetPrecision();
+            }
+        }
+
+        private void updateJSON()
+        {
+            var currentDirectory = Environment.CurrentDirectory;
+            string path = currentDirectory + "\\saved.json";
+
+            bool fileExists = File.Exists(path);
+
+            File.Delete(path);
+            fileExists = File.Exists(path);
+            Console.WriteLine(fileExists);
+            File.Create(path).Close();
+            for (int i = 0; i < cached.Count; i++)
+            {
+                string output = JsonConvert.SerializeObject(cached[i]);
+                Console.WriteLine(output);
+                File.AppendAllLines(path, new string[] { output });
+            }
+
 
         }
 

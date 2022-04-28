@@ -613,7 +613,7 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(40, 692);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(0);
             this.comboBox1.MaxDropDownItems = 100;
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(264, 33);
@@ -623,7 +623,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(430, 592);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
             this.textBox1.Name = "textBox1";
             this.textBox1.PlaceholderText = "Save Name";
             this.textBox1.Size = new System.Drawing.Size(244, 31);
@@ -633,9 +633,9 @@
             // button44
             // 
             this.button44.Location = new System.Drawing.Point(40, 650);
-            this.button44.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.button44.Margin = new System.Windows.Forms.Padding(0);
             this.button44.Name = "button44";
-            this.button44.Size = new System.Drawing.Size(90, 33);
+            this.button44.Size = new System.Drawing.Size(132, 33);
             this.button44.TabIndex = 46;
             this.button44.Text = "Save";
             this.button44.UseVisualStyleBackColor = true;
@@ -643,21 +643,17 @@
             // 
             // button45
             // 
-            this.button45.Location = new System.Drawing.Point(130, 650);
-            this.button45.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.button45.Location = new System.Drawing.Point(0, 0);
             this.button45.Name = "button45";
-            this.button45.Size = new System.Drawing.Size(90, 33);
-            this.button45.TabIndex = 47;
-            this.button45.Text = "Load";
-            this.button45.UseVisualStyleBackColor = true;
-            this.button45.Click += new System.EventHandler(this.button45_Click);
+            this.button45.Size = new System.Drawing.Size(75, 23);
+            this.button45.TabIndex = 49;
             // 
             // button46
             // 
-            this.button46.Location = new System.Drawing.Point(220, 650);
-            this.button46.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.button46.Location = new System.Drawing.Point(172, 650);
+            this.button46.Margin = new System.Windows.Forms.Padding(0);
             this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(90, 33);
+            this.button46.Size = new System.Drawing.Size(132, 33);
             this.button46.TabIndex = 48;
             this.button46.Text = "Delete";
             this.button46.UseVisualStyleBackColor = true;
