@@ -75,7 +75,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button44 = new System.Windows.Forms.Button();
-            this.button45 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -599,18 +598,21 @@
             // 
             // button43
             // 
+            this.button43.BackColor = System.Drawing.SystemColors.Window;
             this.button43.Location = new System.Drawing.Point(430, 650);
             this.button43.Margin = new System.Windows.Forms.Padding(0);
             this.button43.Name = "button43";
             this.button43.Size = new System.Drawing.Size(240, 75);
             this.button43.TabIndex = 43;
             this.button43.Text = "Export Runes";
-            this.button43.UseVisualStyleBackColor = true;
+            this.button43.UseVisualStyleBackColor = false;
             this.button43.Click += new System.EventHandler(this.button43_Click);
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.Window;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(40, 692);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(0);
@@ -632,40 +634,35 @@
             // 
             // button44
             // 
+            this.button44.BackColor = System.Drawing.SystemColors.Window;
             this.button44.Location = new System.Drawing.Point(40, 650);
             this.button44.Margin = new System.Windows.Forms.Padding(0);
             this.button44.Name = "button44";
             this.button44.Size = new System.Drawing.Size(132, 33);
             this.button44.TabIndex = 46;
             this.button44.Text = "Save";
-            this.button44.UseVisualStyleBackColor = true;
+            this.button44.UseVisualStyleBackColor = false;
             this.button44.Click += new System.EventHandler(this.button44_Click);
-            // 
-            // button45
-            // 
-            this.button45.Location = new System.Drawing.Point(0, 0);
-            this.button45.Name = "button45";
-            this.button45.Size = new System.Drawing.Size(75, 23);
-            this.button45.TabIndex = 49;
             // 
             // button46
             // 
+            this.button46.BackColor = System.Drawing.SystemColors.Window;
             this.button46.Location = new System.Drawing.Point(172, 650);
             this.button46.Margin = new System.Windows.Forms.Padding(0);
             this.button46.Name = "button46";
             this.button46.Size = new System.Drawing.Size(132, 33);
             this.button46.TabIndex = 48;
             this.button46.Text = "Delete";
-            this.button46.UseVisualStyleBackColor = true;
+            this.button46.UseVisualStyleBackColor = false;
             this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1046, 759);
             this.Controls.Add(this.button46);
-            this.Controls.Add(this.button45);
             this.Controls.Add(this.button44);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
@@ -770,7 +767,6 @@
         private ComboBox comboBox1;
         private TextBox textBox1;
         private Button button44;
-        private Button button45;
         private Button button46;
     }
 }

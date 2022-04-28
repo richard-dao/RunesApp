@@ -59,8 +59,6 @@ namespace TestApp
 
         private void readSaved()
         {
-            Console.WriteLine(primaryRune);
-            Console.Write(secondaryRune);
             if (primaryRune == "8000")
             {
                 setPrecisionPrimary(); // Sets precision keystones ids
@@ -97,11 +95,6 @@ namespace TestApp
                 secondaryIDInspirationPrimary();
             }
 
-            Console.WriteLine("\n----------");
-            Console.WriteLine(button23.Text);
-            Console.WriteLine(button22.Text);
-            Console.WriteLine(button21.Text);
-            Console.WriteLine(button20.Text);
             
             if (secondaryRune == "8000")
             {
@@ -209,8 +202,11 @@ namespace TestApp
 
             setStatModsText();
 
-            for (int i = 0; i < selectedPerks.Length; i++)
+            for (int i = 0; i < 6; i++)
             {
+                // Previously we have 5005 in [6] and [7]
+                // Then we have 5002 in [6] and 5005 in [7]
+                // Error is, [7] value is being mistaken as [6]
                 foreach (Control c in Controls)
                 {
                     Button b = c as Button;
@@ -223,6 +219,46 @@ namespace TestApp
                     }
                 }
             }
+
+            if (selectedPerks[6] == "5008")
+            {
+                rowReset36();
+            }
+            else if (selectedPerks[6] == "5005")
+            {
+                rowReset35();
+            }
+            else if (selectedPerks[6] == "5007")
+            {
+                rowReset34();
+            }
+
+            if (selectedPerks[7] == "5008")
+            {
+                rowReset39();
+            }
+            else if (selectedPerks[7] == "5002")
+            {
+                rowReset38();
+            }
+            else if (selectedPerks[7] == "5003")
+            {
+                rowReset37();
+            }
+
+            if (selectedPerks[8] == "5001")
+            {
+                rowReset42();
+            }
+            else if (selectedPerks[8] == "5002")
+            {
+                rowReset41();
+            }
+            else if (selectedPerks[8] == "5003")
+            {
+                rowReset40();
+            }
+
 
             if (primaryRune == "8000")
             {
@@ -296,10 +332,12 @@ namespace TestApp
             }
             else if (selectedPerks[6] == "5005")
             {
+                button36.Text = "0";
                 button35.Text = "5005";
             }
             else if (selectedPerks[6] == "5007")
             {
+                button36.Text = "0";
                 button34.Text = "5007";
             }
 
@@ -309,10 +347,12 @@ namespace TestApp
             }
             else if (selectedPerks[7] == "5002")
             {
+                button39.Text = "0";
                 button38.Text = "5002";
             }
             else if (selectedPerks[7] == "5003")
             {
+                button39.Text = "0";
                 button37.Text = "5003";
             }
 
@@ -2574,12 +2614,15 @@ namespace TestApp
             button30.BackColor = SystemColors.Control;
         }
 
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Console.WriteLine(comboBox1.SelectedIndex);
             if (comboBox1.SelectedIndex == 0)
             {
                 resetPrecision();
+                setPrecisionPrimary();
+                removePrecisionSecondary();
             }
             else
             {
@@ -2587,6 +2630,8 @@ namespace TestApp
                 primaryRune = curr.primary;
                 secondaryRune = curr.secondary;
                 selectedPerks = curr.keystones;
+                Console.WriteLine("changed[6] " + selectedPerks[6]);
+                Console.WriteLine("changed[7] " + selectedPerks[7]);
                 bodyName = curr.name;
                 readSaved();
                 export();
