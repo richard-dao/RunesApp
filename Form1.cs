@@ -30,7 +30,6 @@ namespace TestApp
                 name = n;
             }
         }
-        int secondaryCounter = 0;
         static string[] queue = new string[2];
         static string[] selectedPerks = new string[9];
         static string primaryRune = "";
@@ -55,6 +54,23 @@ namespace TestApp
             queue[0] = "0";
             queue[1] = "0";
             loadFromJSON();
+            var currentDirectory = Environment.CurrentDirectory;
+            string path = currentDirectory + "\\Runes";
+            button1.BackgroundImage = Image.FromFile(path + "\\Precision.png");
+            button2.BackgroundImage = Image.FromFile(path + "\\Domination.png");
+            button3.BackgroundImage = Image.FromFile(path + "\\Sorcery.png");
+            button4.BackgroundImage = Image.FromFile(path + "\\Resolve.png");
+            button5.BackgroundImage = Image.FromFile(path + "\\Inspiration.png");
+
+            button36.BackgroundImage = Image.FromFile(path + "\\Adaptive.png");
+            button35.BackgroundImage = Image.FromFile(path + "\\AttackSpeed.png");
+            button34.BackgroundImage = Image.FromFile(path + "\\AbilityHaste.png");
+            button39.BackgroundImage = Image.FromFile(path + "\\Adaptive.png");
+            button38.BackgroundImage = Image.FromFile(path + "\\Armor.png");
+            button37.BackgroundImage = Image.FromFile(path + "\\Resist.png");
+            button42.BackgroundImage = Image.FromFile(path + "\\Health.png");
+            button41.BackgroundImage = Image.FromFile(path + "\\Armor.png");
+            button40.BackgroundImage = Image.FromFile(path + "\\Resist.png");
         }
 
         private void readSaved()
@@ -560,7 +576,6 @@ namespace TestApp
 
         private void resetPrecision()
         {
-            secondaryCounter = 0;
             button1.BackColor = SystemColors.Control;
             button2.BackColor = SystemColors.Desktop;
             button3.BackColor = SystemColors.Desktop;
@@ -673,7 +688,7 @@ namespace TestApp
         
         private void resetDomination()
         {
-            secondaryCounter = 0;
+            
             button1.BackColor = SystemColors.Desktop;
             button2.BackColor = SystemColors.Control;
             button3.BackColor = SystemColors.Desktop;
@@ -785,7 +800,7 @@ namespace TestApp
 
         private void resetSorcery()
         {
-            secondaryCounter = 0;
+            
             button1.BackColor = SystemColors.Desktop;
             button2.BackColor = SystemColors.Desktop;
             button3.BackColor = SystemColors.Control;
@@ -893,7 +908,7 @@ namespace TestApp
 
         private void resetResolve()
         {
-            secondaryCounter = 0;
+            
             button1.BackColor = SystemColors.Desktop;
             button2.BackColor = SystemColors.Desktop;
             button3.BackColor = SystemColors.Desktop;
@@ -1003,7 +1018,7 @@ namespace TestApp
 
         private void resetInspiration()
         {
-            secondaryCounter = 0;
+            
             button1.BackColor = SystemColors.Desktop;
             button2.BackColor = SystemColors.Desktop;
             button3.BackColor = SystemColors.Desktop;
@@ -1130,7 +1145,7 @@ namespace TestApp
 
         private void resetSecondaryPD()
         {
-            secondaryCounter = 0;
+            
             button23.BackColor = SystemColors.Control;
             button22.BackColor = SystemColors.Desktop;
             button21.BackColor = SystemColors.Desktop;
@@ -1251,7 +1266,7 @@ namespace TestApp
 
         private void resetSecondaryDS()
         {
-            secondaryCounter = 0;
+            
             button23.BackColor = SystemColors.Desktop;
             button22.BackColor = SystemColors.Control;
             button21.BackColor = SystemColors.Desktop;
@@ -1326,7 +1341,7 @@ namespace TestApp
 
         private void resetSecondarySR()
         {
-            secondaryCounter = 0;
+            
             button23.BackColor = SystemColors.Desktop;
             button22.BackColor = SystemColors.Desktop;
             button21.BackColor = SystemColors.Control;
@@ -1401,7 +1416,7 @@ namespace TestApp
 
         private void resetSecondaryRI()
         {
-            secondaryCounter = 0;
+            
             button23.BackColor = SystemColors.Desktop;
             button22.BackColor = SystemColors.Desktop;
             button21.BackColor = SystemColors.Desktop;
@@ -2630,8 +2645,6 @@ namespace TestApp
                 primaryRune = curr.primary;
                 secondaryRune = curr.secondary;
                 selectedPerks = curr.keystones;
-                Console.WriteLine("changed[6] " + selectedPerks[6]);
-                Console.WriteLine("changed[7] " + selectedPerks[7]);
                 bodyName = curr.name;
                 readSaved();
                 export();
@@ -2674,12 +2687,8 @@ namespace TestApp
 
             for (int i = 0; i < cached.Count; i++)
             {
+                Console.WriteLine(cached[i]);
                 comboBox1.Items.Add(cached[i].name);
-            }
-
-            for (int i = 0; i < comboBox1.Items.Count; i++)
-            {
-                Console.WriteLine(comboBox1.Items[i] + " " + i.ToString());
             }
         }
 
@@ -2701,6 +2710,7 @@ namespace TestApp
                 {
                     string output = JsonConvert.SerializeObject(a);
                     File.AppendAllLines(path, new string[] { output });
+                    cached.Add(a);
                 }
                 else
                 {
@@ -2746,7 +2756,6 @@ namespace TestApp
             export();
             saveToJSON();
             updateComboBox();
-            textBox1.Text = null;
         }
 
         private void button46_Click(object sender, EventArgs e)
