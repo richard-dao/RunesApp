@@ -610,16 +610,16 @@ namespace TestApp
             button32.BackColor = SystemColors.Desktop;
             button33.BackColor = SystemColors.Desktop;
 
-            button24.Image = null;
-            button25.Image = null;
-            button26.Image = null;
-            button27.Image = null;
-            button28.Image = null;
-            button29.Image = null;
-            button30.Image = null;
-            button31.Image = null;
-            button32.Image = null;
-            button33.Image = null;
+            button24.BackgroundImage = null;
+            button25.BackgroundImage = null;
+            button26.BackgroundImage = null;
+            button27.BackgroundImage = null;
+            button28.BackgroundImage = null;
+            button29.BackgroundImage = null;
+            button30.BackgroundImage = null;
+            button31.BackgroundImage = null;
+            button32.BackgroundImage = null;
+            button33.BackgroundImage = null;
 
 
         }
@@ -630,19 +630,19 @@ namespace TestApp
             button6.Visible = true;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button9.Image = Image.FromFile(currentDirectory + "\\PressTheAttack.png");
-            button8.Image = Image.FromFile(currentDirectory + "\\LethalTempo.png");
-            button7.Image = Image.FromFile(currentDirectory + "\\FleetFootwork.png");
-            button6.Image = Image.FromFile(currentDirectory + "\\Conquerer.png");
-            button12.Image = Image.FromFile(currentDirectory + "\\Overheal.png");
-            button11.Image = Image.FromFile(currentDirectory + "\\Triumph.png");
-            button10.Image = Image.FromFile(currentDirectory + "\\PresenceOfMind.png");
-            button15.Image = Image.FromFile(currentDirectory + "\\LegendAlacrity.png");
-            button14.Image = Image.FromFile(currentDirectory + "\\LegendTenacity.png");
-            button13.Image = Image.FromFile(currentDirectory + "\\LegendBloodline.png");
-            button19.Image = Image.FromFile(currentDirectory + "\\CoupDeGrace.png");
-            button18.Image = Image.FromFile(currentDirectory + "\\Cutdown.png");
-            button17.Image = Image.FromFile(currentDirectory + "\\LastStand.png");
+            button9.BackgroundImage = Image.FromFile(currentDirectory + "\\PressTheAttack.png");
+            button8.BackgroundImage = Image.FromFile(currentDirectory + "\\LethalTempo.png");
+            button7.BackgroundImage = Image.FromFile(currentDirectory + "\\FleetFootwork.png");
+            button6.BackgroundImage = Image.FromFile(currentDirectory + "\\Conquerer.png");
+            button12.BackgroundImage = Image.FromFile(currentDirectory + "\\Overheal.png");
+            button11.BackgroundImage = Image.FromFile(currentDirectory + "\\Triumph.png");
+            button10.BackgroundImage = Image.FromFile(currentDirectory + "\\PresenceOfMind.png");
+            button15.BackgroundImage = Image.FromFile(currentDirectory + "\\LegendAlacrity.png");
+            button14.BackgroundImage = Image.FromFile(currentDirectory + "\\LegendTenacity.png");
+            button13.BackgroundImage = Image.FromFile(currentDirectory + "\\LegendBloodline.png");
+            button19.BackgroundImage = Image.FromFile(currentDirectory + "\\CoupDeGrace.png");
+            button18.BackgroundImage = Image.FromFile(currentDirectory + "\\Cutdown.png");
+            button17.BackgroundImage = Image.FromFile(currentDirectory + "\\LastStand.png");
 
             button9.Text = "8005";
             button8.Text = "8008";
@@ -664,13 +664,13 @@ namespace TestApp
         {
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button23.Image = Image.FromFile(currentDirectory + "\\Domination.png");
+            button23.BackgroundImage = Image.FromFile(currentDirectory + "\\Domination.png");
             button23.Text = "Domination";
-            button22.Image = Image.FromFile(currentDirectory + "\\Sorcery.png");
+            button22.BackgroundImage = Image.FromFile(currentDirectory + "\\Sorcery.png");
             button22.Text = "Sorcery";
-            button21.Image = Image.FromFile(currentDirectory + "\\Resolve.png");
+            button21.BackgroundImage = Image.FromFile(currentDirectory + "\\Resolve.png");
             button21.Text = "Resolve";
-            button20.Image = Image.FromFile(currentDirectory + "\\Inspiration.png");
+            button20.BackgroundImage = Image.FromFile(currentDirectory + "\\Inspiration.png");
             button20.Text = "Inspiration";
         }
 
@@ -723,16 +723,16 @@ namespace TestApp
             button32.BackColor = SystemColors.Desktop;
             button33.BackColor = SystemColors.Desktop;
 
-            button24.Image = null;
-            button25.Image = null;
-            button26.Image = null;
-            button27.Image = null;
-            button28.Image = null;
-            button29.Image = null;
-            button30.Image = null;
-            button31.Image = null;
-            button32.Image = null;
-            button33.Image = null;
+            button24.BackgroundImage = null;
+            button25.BackgroundImage = null;
+            button26.BackgroundImage = null;
+            button27.BackgroundImage = null;
+            button28.BackgroundImage = null;
+            button29.BackgroundImage = null;
+            button30.BackgroundImage = null;
+            button31.BackgroundImage = null;
+            button32.BackgroundImage = null;
+            button33.BackgroundImage = null;
         }
 
         private void setDominationPrimary()
@@ -741,20 +741,20 @@ namespace TestApp
             button6.Visible = true;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button9.Image = Image.FromFile(currentDirectory + "\\Electrocute.png");
-            button8.Image = Image.FromFile(currentDirectory + "\\Predator.png");
-            button7.Image = Image.FromFile(currentDirectory + "\\DarkHarvest.png");
-            button6.Image = Image.FromFile(currentDirectory + "\\HailOfBlades.png");
-            button12.Image = Image.FromFile(currentDirectory + "\\CheapShot.png");
-            button11.Image = Image.FromFile(currentDirectory + "\\TasteOfBlood.png");
-            button10.Image = Image.FromFile(currentDirectory + "\\SuddenImpact.png");
-            button15.Image = Image.FromFile(currentDirectory + "\\ZombieWard.png");
-            button14.Image = Image.FromFile(currentDirectory + "\\GhostPoro.png");
-            button13.Image = Image.FromFile(currentDirectory + "\\EyeballCollection.png");
-            button19.Image = Image.FromFile(currentDirectory + "\\TreasureHunter.png");
-            button18.Image = Image.FromFile(currentDirectory + "\\IngeniousHunter.png");
-            button17.Image = Image.FromFile(currentDirectory + "\\RelentlessHunter.png");
-            button16.Image = Image.FromFile(currentDirectory + "\\UltimateHunter.png");
+            button9.BackgroundImage = Image.FromFile(currentDirectory + "\\Electrocute.png");
+            button8.BackgroundImage = Image.FromFile(currentDirectory + "\\Predator.png");
+            button7.BackgroundImage = Image.FromFile(currentDirectory + "\\DarkHarvest.png");
+            button6.BackgroundImage = Image.FromFile(currentDirectory + "\\HailOfBlades.png");
+            button12.BackgroundImage = Image.FromFile(currentDirectory + "\\CheapShot.png");
+            button11.BackgroundImage = Image.FromFile(currentDirectory + "\\TasteOfBlood.png");
+            button10.BackgroundImage = Image.FromFile(currentDirectory + "\\SuddenImpact.png");
+            button15.BackgroundImage = Image.FromFile(currentDirectory + "\\ZombieWard.png");
+            button14.BackgroundImage = Image.FromFile(currentDirectory + "\\GhostPoro.png");
+            button13.BackgroundImage = Image.FromFile(currentDirectory + "\\EyeballCollection.png");
+            button19.BackgroundImage = Image.FromFile(currentDirectory + "\\TreasureHunter.png");
+            button18.BackgroundImage = Image.FromFile(currentDirectory + "\\IngeniousHunter.png");
+            button17.BackgroundImage = Image.FromFile(currentDirectory + "\\RelentlessHunter.png");
+            button16.BackgroundImage = Image.FromFile(currentDirectory + "\\UltimateHunter.png");
 
             button9.Text = "8112";
             button8.Text = "8124";
@@ -776,13 +776,13 @@ namespace TestApp
         {
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button23.Image = Image.FromFile(currentDirectory + "\\Precision.png");
+            button23.BackgroundImage = Image.FromFile(currentDirectory + "\\Precision.png");
             button23.Text = "Precision";
-            button22.Image = Image.FromFile(currentDirectory + "\\Sorcery.png");
+            button22.BackgroundImage = Image.FromFile(currentDirectory + "\\Sorcery.png");
             button22.Text = "Sorcery";
-            button21.Image = Image.FromFile(currentDirectory + "\\Resolve.png");
+            button21.BackgroundImage = Image.FromFile(currentDirectory + "\\Resolve.png");
             button21.Text = "Resolve";
-            button20.Image = Image.FromFile(currentDirectory + "\\Inspiration.png");
+            button20.BackgroundImage = Image.FromFile(currentDirectory + "\\Inspiration.png");
             button20.Text = "Inspiration";
         }
 
@@ -835,16 +835,16 @@ namespace TestApp
             button32.BackColor = SystemColors.Desktop;
             button33.BackColor = SystemColors.Desktop;
 
-            button24.Image = null;
-            button25.Image = null;
-            button26.Image = null;
-            button27.Image = null;
-            button28.Image = null;
-            button29.Image = null;
-            button30.Image = null;
-            button31.Image = null;
-            button32.Image = null;
-            button33.Image = null;
+            button24.BackgroundImage = null;
+            button25.BackgroundImage = null;
+            button26.BackgroundImage = null;
+            button27.BackgroundImage = null;
+            button28.BackgroundImage = null;
+            button29.BackgroundImage = null;
+            button30.BackgroundImage = null;
+            button31.BackgroundImage = null;
+            button32.BackgroundImage = null;
+            button33.BackgroundImage = null;
         }
 
         private void setSorceryPrimary()
@@ -853,18 +853,18 @@ namespace TestApp
             button6.Visible = false;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button9.Image = Image.FromFile(currentDirectory + "\\SummonAery.png");
-            button8.Image = Image.FromFile(currentDirectory + "\\ArcaneComet.png");
-            button7.Image = Image.FromFile(currentDirectory + "\\PhaseRush.png");
-            button12.Image = Image.FromFile(currentDirectory + "\\NullifyingOrb.png");
-            button11.Image = Image.FromFile(currentDirectory + "\\ManaflowBand.png");
-            button10.Image = Image.FromFile(currentDirectory + "\\NimbusCloak.png");
-            button15.Image = Image.FromFile(currentDirectory + "\\Transcendence.png");
-            button14.Image = Image.FromFile(currentDirectory + "\\Celerity.png");
-            button13.Image = Image.FromFile(currentDirectory + "\\AbsoluteFocus.png");
-            button19.Image = Image.FromFile(currentDirectory + "\\Scorch.png");
-            button18.Image = Image.FromFile(currentDirectory + "\\Waterwalking.png");
-            button17.Image = Image.FromFile(currentDirectory + "\\GatheringStorm.png");
+            button9.BackgroundImage = Image.FromFile(currentDirectory + "\\SummonAery.png");
+            button8.BackgroundImage = Image.FromFile(currentDirectory + "\\ArcaneComet.png");
+            button7.BackgroundImage = Image.FromFile(currentDirectory + "\\PhaseRush.png");
+            button12.BackgroundImage = Image.FromFile(currentDirectory + "\\NullifyingOrb.png");
+            button11.BackgroundImage = Image.FromFile(currentDirectory + "\\ManaflowBand.png");
+            button10.BackgroundImage = Image.FromFile(currentDirectory + "\\NimbusCloak.png");
+            button15.BackgroundImage = Image.FromFile(currentDirectory + "\\Transcendence.png");
+            button14.BackgroundImage = Image.FromFile(currentDirectory + "\\Celerity.png");
+            button13.BackgroundImage = Image.FromFile(currentDirectory + "\\AbsoluteFocus.png");
+            button19.BackgroundImage = Image.FromFile(currentDirectory + "\\Scorch.png");
+            button18.BackgroundImage = Image.FromFile(currentDirectory + "\\Waterwalking.png");
+            button17.BackgroundImage = Image.FromFile(currentDirectory + "\\GatheringStorm.png");
 
             button9.Text = "8214";
             button8.Text = "8229";
@@ -884,13 +884,13 @@ namespace TestApp
         {
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button23.Image = Image.FromFile(currentDirectory + "\\Precision.png");
+            button23.BackgroundImage = Image.FromFile(currentDirectory + "\\Precision.png");
             button23.Text = "Precision";
-            button22.Image = Image.FromFile(currentDirectory + "\\Domination.png");
+            button22.BackgroundImage = Image.FromFile(currentDirectory + "\\Domination.png");
             button22.Text = "Domination";
-            button21.Image = Image.FromFile(currentDirectory + "\\Resolve.png");
+            button21.BackgroundImage = Image.FromFile(currentDirectory + "\\Resolve.png");
             button21.Text = "Resolve";
-            button20.Image = Image.FromFile(currentDirectory + "\\Inspiration.png");
+            button20.BackgroundImage = Image.FromFile(currentDirectory + "\\Inspiration.png");
             button20.Text = "Inspiration";
         }
 
@@ -943,16 +943,16 @@ namespace TestApp
             button32.BackColor = SystemColors.Desktop;
             button33.BackColor = SystemColors.Desktop;
 
-            button24.Image = null;
-            button25.Image = null;
-            button26.Image = null;
-            button27.Image = null;
-            button28.Image = null;
-            button29.Image = null;
-            button30.Image = null;
-            button31.Image = null;
-            button32.Image = null;
-            button33.Image = null;
+            button24.BackgroundImage = null;
+            button25.BackgroundImage = null;
+            button26.BackgroundImage = null;
+            button27.BackgroundImage = null;
+            button28.BackgroundImage = null;
+            button29.BackgroundImage = null;
+            button30.BackgroundImage = null;
+            button31.BackgroundImage = null;
+            button32.BackgroundImage = null;
+            button33.BackgroundImage = null;
 
         }
 
@@ -962,18 +962,18 @@ namespace TestApp
             button6.Visible = false;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button9.Image = Image.FromFile(currentDirectory + "\\GraspOfTheUndying.png");
-            button8.Image = Image.FromFile(currentDirectory + "\\Aftershock.png");
-            button7.Image = Image.FromFile(currentDirectory + "\\Guardian.png");
-            button12.Image = Image.FromFile(currentDirectory + "\\Demolish.png");
-            button11.Image = Image.FromFile(currentDirectory + "\\FontOfLife.png");
-            button10.Image = Image.FromFile(currentDirectory + "\\ShieldBash.png");
-            button15.Image = Image.FromFile(currentDirectory + "\\Conditioning.png");
-            button14.Image = Image.FromFile(currentDirectory + "\\SecondWind.png");
-            button13.Image = Image.FromFile(currentDirectory + "\\BonePlating.png");
-            button19.Image = Image.FromFile(currentDirectory + "\\Overgrowth.png");
-            button18.Image = Image.FromFile(currentDirectory + "\\Revitalize.png");
-            button17.Image = Image.FromFile(currentDirectory + "\\Unflinching.png");
+            button9.BackgroundImage = Image.FromFile(currentDirectory + "\\GraspOfTheUndying.png");
+            button8.BackgroundImage = Image.FromFile(currentDirectory + "\\Aftershock.png");
+            button7.BackgroundImage = Image.FromFile(currentDirectory + "\\Guardian.png");
+            button12.BackgroundImage = Image.FromFile(currentDirectory + "\\Demolish.png");
+            button11.BackgroundImage = Image.FromFile(currentDirectory + "\\FontOfLife.png");
+            button10.BackgroundImage = Image.FromFile(currentDirectory + "\\ShieldBash.png");
+            button15.BackgroundImage = Image.FromFile(currentDirectory + "\\Conditioning.png");
+            button14.BackgroundImage = Image.FromFile(currentDirectory + "\\SecondWind.png");
+            button13.BackgroundImage = Image.FromFile(currentDirectory + "\\BonePlating.png");
+            button19.BackgroundImage = Image.FromFile(currentDirectory + "\\Overgrowth.png");
+            button18.BackgroundImage = Image.FromFile(currentDirectory + "\\Revitalize.png");
+            button17.BackgroundImage = Image.FromFile(currentDirectory + "\\Unflinching.png");
 
             button9.Text = "8437";
             button8.Text = "8439";
@@ -993,13 +993,13 @@ namespace TestApp
         {
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button23.Image = Image.FromFile(currentDirectory + "\\Precision.png");
+            button23.BackgroundImage = Image.FromFile(currentDirectory + "\\Precision.png");
             button23.Text = "Precision";
-            button22.Image = Image.FromFile(currentDirectory + "\\Domination.png");
+            button22.BackgroundImage = Image.FromFile(currentDirectory + "\\Domination.png");
             button22.Text = "Domination";
-            button21.Image = Image.FromFile(currentDirectory + "\\Sorcery.png");
+            button21.BackgroundImage = Image.FromFile(currentDirectory + "\\Sorcery.png");
             button21.Text = "Sorcery";
-            button20.Image = Image.FromFile(currentDirectory + "\\Inspiration.png");
+            button20.BackgroundImage = Image.FromFile(currentDirectory + "\\Inspiration.png");
             button20.Text = "Inspiration";
         }
 
@@ -1053,16 +1053,16 @@ namespace TestApp
             button32.BackColor = SystemColors.Desktop;
             button33.BackColor = SystemColors.Desktop;
 
-            button24.Image = null;
-            button25.Image = null;
-            button26.Image = null;
-            button27.Image = null;
-            button28.Image = null;
-            button29.Image = null;
-            button30.Image = null;
-            button31.Image = null;
-            button32.Image = null;
-            button33.Image = null;
+            button24.BackgroundImage = null;
+            button25.BackgroundImage = null;
+            button26.BackgroundImage = null;
+            button27.BackgroundImage = null;
+            button28.BackgroundImage = null;
+            button29.BackgroundImage = null;
+            button30.BackgroundImage = null;
+            button31.BackgroundImage = null;
+            button32.BackgroundImage = null;
+            button33.BackgroundImage = null;
         }
 
         private void setInspirationPrimary()
@@ -1071,18 +1071,18 @@ namespace TestApp
             button6.Visible = false;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button9.Image = Image.FromFile(currentDirectory + "\\GlacialAugment.png");
-            button8.Image = Image.FromFile(currentDirectory + "\\UnsealedSpellbook.png");
-            button7.Image = Image.FromFile(currentDirectory + "\\FirstStrike.png");
-            button12.Image = Image.FromFile(currentDirectory + "\\HextechFlashtraption.png");
-            button11.Image = Image.FromFile(currentDirectory + "\\MagicalFootwear.png");
-            button10.Image = Image.FromFile(currentDirectory + "\\PerfectTiming.png");
-            button15.Image = Image.FromFile(currentDirectory + "\\FuturesMarket.png");
-            button14.Image = Image.FromFile(currentDirectory + "\\MinionDematerializer.png");
-            button13.Image = Image.FromFile(currentDirectory + "\\BiscuitDelivery.png");
-            button19.Image = Image.FromFile(currentDirectory + "\\CosmicInsight.png");
-            button18.Image = Image.FromFile(currentDirectory + "\\ApproachVelocity.png");
-            button17.Image = Image.FromFile(currentDirectory + "\\TimeWarpTonic.png");
+            button9.BackgroundImage = Image.FromFile(currentDirectory + "\\GlacialAugment.png");
+            button8.BackgroundImage = Image.FromFile(currentDirectory + "\\UnsealedSpellbook.png");
+            button7.BackgroundImage = Image.FromFile(currentDirectory + "\\FirstStrike.png");
+            button12.BackgroundImage = Image.FromFile(currentDirectory + "\\HextechFlashtraption.png");
+            button11.BackgroundImage = Image.FromFile(currentDirectory + "\\MagicalFootwear.png");
+            button10.BackgroundImage = Image.FromFile(currentDirectory + "\\PerfectTiming.png");
+            button15.BackgroundImage = Image.FromFile(currentDirectory + "\\FuturesMarket.png");
+            button14.BackgroundImage = Image.FromFile(currentDirectory + "\\MinionDematerializer.png");
+            button13.BackgroundImage = Image.FromFile(currentDirectory + "\\BiscuitDelivery.png");
+            button19.BackgroundImage = Image.FromFile(currentDirectory + "\\CosmicInsight.png");
+            button18.BackgroundImage = Image.FromFile(currentDirectory + "\\ApproachVelocity.png");
+            button17.BackgroundImage = Image.FromFile(currentDirectory + "\\TimeWarpTonic.png");
 
             button9.Text = "8351";
             button8.Text = "8360";
@@ -1102,13 +1102,13 @@ namespace TestApp
         {
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button23.Image = Image.FromFile(currentDirectory + "\\Precision.png");
+            button23.BackgroundImage = Image.FromFile(currentDirectory + "\\Precision.png");
             button23.Text = "Precision";
-            button22.Image = Image.FromFile(currentDirectory + "\\Domination.png");
+            button22.BackgroundImage = Image.FromFile(currentDirectory + "\\Domination.png");
             button22.Text = "Domination";
-            button21.Image = Image.FromFile(currentDirectory + "\\Sorcery.png");
+            button21.BackgroundImage = Image.FromFile(currentDirectory + "\\Sorcery.png");
             button21.Text = "Sorcery";
-            button20.Image = Image.FromFile(currentDirectory + "\\Resolve.png");
+            button20.BackgroundImage = Image.FromFile(currentDirectory + "\\Resolve.png");
             button20.Text = "Resolve";
         }
 
@@ -1168,15 +1168,15 @@ namespace TestApp
             button33.Visible = false;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button26.Image = Image.FromFile(currentDirectory + "\\Overheal.png");
-            button25.Image = Image.FromFile(currentDirectory + "\\Triumph.png");
-            button24.Image = Image.FromFile(currentDirectory + "\\PresenceOfMind.png");
-            button29.Image = Image.FromFile(currentDirectory + "\\LegendAlacrity.png");
-            button28.Image = Image.FromFile(currentDirectory + "\\LegendTenacity.png");
-            button27.Image = Image.FromFile(currentDirectory + "\\LegendBloodline.png");
-            button32.Image = Image.FromFile(currentDirectory + "\\CoupDeGrace.png");
-            button31.Image = Image.FromFile(currentDirectory + "\\Cutdown.png");
-            button30.Image = Image.FromFile(currentDirectory + "\\LastStand.png");
+            button26.BackgroundImage = Image.FromFile(currentDirectory + "\\Overheal.png");
+            button25.BackgroundImage = Image.FromFile(currentDirectory + "\\Triumph.png");
+            button24.BackgroundImage = Image.FromFile(currentDirectory + "\\PresenceOfMind.png");
+            button29.BackgroundImage = Image.FromFile(currentDirectory + "\\LegendAlacrity.png");
+            button28.BackgroundImage = Image.FromFile(currentDirectory + "\\LegendTenacity.png");
+            button27.BackgroundImage = Image.FromFile(currentDirectory + "\\LegendBloodline.png");
+            button32.BackgroundImage = Image.FromFile(currentDirectory + "\\CoupDeGrace.png");
+            button31.BackgroundImage = Image.FromFile(currentDirectory + "\\Cutdown.png");
+            button30.BackgroundImage = Image.FromFile(currentDirectory + "\\LastStand.png");
 
 
             button26.Text = "9101";
@@ -1210,16 +1210,16 @@ namespace TestApp
             button33.Visible = true;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button26.Image = Image.FromFile(currentDirectory + "\\CheapShot.png");
-            button25.Image = Image.FromFile(currentDirectory + "\\TasteOfBlood.png");
-            button24.Image = Image.FromFile(currentDirectory + "\\SuddenImpact.png");
-            button29.Image = Image.FromFile(currentDirectory + "\\ZombieWard.png");
-            button28.Image = Image.FromFile(currentDirectory + "\\GhostPoro.png");
-            button27.Image = Image.FromFile(currentDirectory + "\\EyeballCollection.png");
-            button33.Image = Image.FromFile(currentDirectory + "\\TreasureHunter.png");
-            button32.Image = Image.FromFile(currentDirectory + "\\IngeniousHunter.png");
-            button31.Image = Image.FromFile(currentDirectory + "\\RelentlessHunter.png");
-            button30.Image = Image.FromFile(currentDirectory + "\\UltimateHunter.png");
+            button26.BackgroundImage = Image.FromFile(currentDirectory + "\\CheapShot.png");
+            button25.BackgroundImage = Image.FromFile(currentDirectory + "\\TasteOfBlood.png");
+            button24.BackgroundImage = Image.FromFile(currentDirectory + "\\SuddenImpact.png");
+            button29.BackgroundImage = Image.FromFile(currentDirectory + "\\ZombieWard.png");
+            button28.BackgroundImage = Image.FromFile(currentDirectory + "\\GhostPoro.png");
+            button27.BackgroundImage = Image.FromFile(currentDirectory + "\\EyeballCollection.png");
+            button33.BackgroundImage = Image.FromFile(currentDirectory + "\\TreasureHunter.png");
+            button32.BackgroundImage = Image.FromFile(currentDirectory + "\\IngeniousHunter.png");
+            button31.BackgroundImage = Image.FromFile(currentDirectory + "\\RelentlessHunter.png");
+            button30.BackgroundImage = Image.FromFile(currentDirectory + "\\UltimateHunter.png");
 
             button26.Text = "8126";
             button25.Text = "8139";
@@ -1288,15 +1288,15 @@ namespace TestApp
             button33.Visible = false;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button26.Image = Image.FromFile(currentDirectory + "\\NullifyingOrb.png");
-            button25.Image = Image.FromFile(currentDirectory + "\\ManaflowBand.png");
-            button24.Image = Image.FromFile(currentDirectory + "\\NimbusCloak.png");
-            button29.Image = Image.FromFile(currentDirectory + "\\Transcendence.png");
-            button28.Image = Image.FromFile(currentDirectory + "\\Celerity.png");
-            button27.Image = Image.FromFile(currentDirectory + "\\AbsoluteFocus.png");
-            button32.Image = Image.FromFile(currentDirectory + "\\Scorch.png");
-            button31.Image = Image.FromFile(currentDirectory + "\\Waterwalking.png");
-            button30.Image = Image.FromFile(currentDirectory + "\\GatheringStorm.png");
+            button26.BackgroundImage = Image.FromFile(currentDirectory + "\\NullifyingOrb.png");
+            button25.BackgroundImage = Image.FromFile(currentDirectory + "\\ManaflowBand.png");
+            button24.BackgroundImage = Image.FromFile(currentDirectory + "\\NimbusCloak.png");
+            button29.BackgroundImage = Image.FromFile(currentDirectory + "\\Transcendence.png");
+            button28.BackgroundImage = Image.FromFile(currentDirectory + "\\Celerity.png");
+            button27.BackgroundImage = Image.FromFile(currentDirectory + "\\AbsoluteFocus.png");
+            button32.BackgroundImage = Image.FromFile(currentDirectory + "\\Scorch.png");
+            button31.BackgroundImage = Image.FromFile(currentDirectory + "\\Waterwalking.png");
+            button30.BackgroundImage = Image.FromFile(currentDirectory + "\\GatheringStorm.png");
 
             button26.Text = "8224";
             button25.Text = "8226";
@@ -1364,15 +1364,15 @@ namespace TestApp
             button33.Visible = false;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button26.Image = Image.FromFile(currentDirectory + "\\Demolish.png");
-            button25.Image = Image.FromFile(currentDirectory + "\\FontOfLife.png");
-            button24.Image = Image.FromFile(currentDirectory + "\\ShieldBash.png");
-            button29.Image = Image.FromFile(currentDirectory + "\\Conditioning.png");
-            button28.Image = Image.FromFile(currentDirectory + "\\SecondWind.png");
-            button27.Image = Image.FromFile(currentDirectory + "\\BonePlating.png");
-            button32.Image = Image.FromFile(currentDirectory + "\\Overgrowth.png");
-            button31.Image = Image.FromFile(currentDirectory + "\\Revitalize.png");
-            button30.Image = Image.FromFile(currentDirectory + "\\Unflinching.png");
+            button26.BackgroundImage = Image.FromFile(currentDirectory + "\\Demolish.png");
+            button25.BackgroundImage = Image.FromFile(currentDirectory + "\\FontOfLife.png");
+            button24.BackgroundImage = Image.FromFile(currentDirectory + "\\ShieldBash.png");
+            button29.BackgroundImage = Image.FromFile(currentDirectory + "\\Conditioning.png");
+            button28.BackgroundImage = Image.FromFile(currentDirectory + "\\SecondWind.png");
+            button27.BackgroundImage = Image.FromFile(currentDirectory + "\\BonePlating.png");
+            button32.BackgroundImage = Image.FromFile(currentDirectory + "\\Overgrowth.png");
+            button31.BackgroundImage = Image.FromFile(currentDirectory + "\\Revitalize.png");
+            button30.BackgroundImage = Image.FromFile(currentDirectory + "\\Unflinching.png");
 
             button26.Text = "8446";
             button25.Text = "8463";
@@ -1439,15 +1439,15 @@ namespace TestApp
             button33.Visible = false;
             var currentDirectory = Environment.CurrentDirectory;
             currentDirectory = currentDirectory + "\\Runes";
-            button26.Image = Image.FromFile(currentDirectory + "\\HextechFlashtraption.png");
-            button25.Image = Image.FromFile(currentDirectory + "\\MagicalFootwear.png");
-            button24.Image = Image.FromFile(currentDirectory + "\\PerfectTiming.png");
-            button29.Image = Image.FromFile(currentDirectory + "\\FuturesMarket.png");
-            button28.Image = Image.FromFile(currentDirectory + "\\MinionDematerializer.png");
-            button27.Image = Image.FromFile(currentDirectory + "\\BiscuitDelivery.png");
-            button32.Image = Image.FromFile(currentDirectory + "\\CosmicInsight.png");
-            button31.Image = Image.FromFile(currentDirectory + "\\ApproachVelocity.png");
-            button30.Image = Image.FromFile(currentDirectory + "\\TimeWarpTonic.png");
+            button26.BackgroundImage = Image.FromFile(currentDirectory + "\\HextechFlashtraption.png");
+            button25.BackgroundImage = Image.FromFile(currentDirectory + "\\MagicalFootwear.png");
+            button24.BackgroundImage = Image.FromFile(currentDirectory + "\\PerfectTiming.png");
+            button29.BackgroundImage = Image.FromFile(currentDirectory + "\\FuturesMarket.png");
+            button28.BackgroundImage = Image.FromFile(currentDirectory + "\\MinionDematerializer.png");
+            button27.BackgroundImage = Image.FromFile(currentDirectory + "\\BiscuitDelivery.png");
+            button32.BackgroundImage = Image.FromFile(currentDirectory + "\\CosmicInsight.png");
+            button31.BackgroundImage = Image.FromFile(currentDirectory + "\\ApproachVelocity.png");
+            button30.BackgroundImage = Image.FromFile(currentDirectory + "\\TimeWarpTonic.png");
 
             button26.Text = "8306";
             button25.Text = "8304";

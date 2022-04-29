@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -81,6 +80,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Location = new System.Drawing.Point(50, 92);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
@@ -92,6 +92,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Location = new System.Drawing.Point(140, 92);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
@@ -103,6 +104,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Location = new System.Drawing.Point(230, 92);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
@@ -114,6 +116,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Location = new System.Drawing.Point(320, 92);
             this.button4.Margin = new System.Windows.Forms.Padding(0);
             this.button4.Name = "button4";
@@ -125,6 +128,7 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.Location = new System.Drawing.Point(410, 92);
             this.button5.Margin = new System.Windows.Forms.Padding(0);
             this.button5.Name = "button5";
@@ -136,6 +140,7 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button6.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button6.Location = new System.Drawing.Point(260, 200);
             this.button6.Margin = new System.Windows.Forms.Padding(0);
@@ -148,6 +153,7 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button7.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button7.Location = new System.Drawing.Point(190, 200);
             this.button7.Margin = new System.Windows.Forms.Padding(0);
@@ -160,6 +166,7 @@
             // button8
             // 
             this.button8.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button8.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button8.Location = new System.Drawing.Point(120, 200);
             this.button8.Margin = new System.Windows.Forms.Padding(0);
@@ -172,6 +179,7 @@
             // button9
             // 
             this.button9.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button9.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button9.Location = new System.Drawing.Point(50, 200);
             this.button9.Margin = new System.Windows.Forms.Padding(0);
@@ -184,6 +192,7 @@
             // button10
             // 
             this.button10.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button10.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button10.Location = new System.Drawing.Point(190, 300);
             this.button10.Margin = new System.Windows.Forms.Padding(0);
@@ -196,6 +205,7 @@
             // button11
             // 
             this.button11.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button11.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button11.Location = new System.Drawing.Point(120, 300);
             this.button11.Margin = new System.Windows.Forms.Padding(0);
@@ -208,6 +218,7 @@
             // button12
             // 
             this.button12.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button12.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button12.Location = new System.Drawing.Point(50, 300);
             this.button12.Margin = new System.Windows.Forms.Padding(0);
@@ -220,6 +231,7 @@
             // button13
             // 
             this.button13.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button13.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button13.Location = new System.Drawing.Point(190, 392);
             this.button13.Margin = new System.Windows.Forms.Padding(0);
@@ -232,6 +244,7 @@
             // button14
             // 
             this.button14.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button14.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button14.Location = new System.Drawing.Point(120, 392);
             this.button14.Margin = new System.Windows.Forms.Padding(0);
@@ -244,6 +257,7 @@
             // button15
             // 
             this.button15.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button15.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button15.Location = new System.Drawing.Point(50, 392);
             this.button15.Margin = new System.Windows.Forms.Padding(0);
@@ -256,6 +270,7 @@
             // button16
             // 
             this.button16.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button16.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button16.Location = new System.Drawing.Point(260, 483);
             this.button16.Margin = new System.Windows.Forms.Padding(0);
@@ -268,6 +283,7 @@
             // button17
             // 
             this.button17.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button17.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button17.Location = new System.Drawing.Point(190, 483);
             this.button17.Margin = new System.Windows.Forms.Padding(0);
@@ -280,6 +296,7 @@
             // button18
             // 
             this.button18.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button18.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button18.Location = new System.Drawing.Point(120, 483);
             this.button18.Margin = new System.Windows.Forms.Padding(0);
@@ -292,6 +309,7 @@
             // button19
             // 
             this.button19.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button19.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button19.Location = new System.Drawing.Point(50, 483);
             this.button19.Margin = new System.Windows.Forms.Padding(0);
@@ -304,6 +322,7 @@
             // button20
             // 
             this.button20.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button20.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button20.Location = new System.Drawing.Point(900, 92);
@@ -317,6 +336,7 @@
             // button21
             // 
             this.button21.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button21.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button21.Location = new System.Drawing.Point(810, 92);
@@ -330,6 +350,7 @@
             // button22
             // 
             this.button22.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button22.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button22.Location = new System.Drawing.Point(720, 92);
@@ -343,6 +364,7 @@
             // button23
             // 
             this.button23.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button23.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button23.Location = new System.Drawing.Point(630, 92);
@@ -356,6 +378,7 @@
             // button24
             // 
             this.button24.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button24.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button24.Location = new System.Drawing.Point(920, 200);
             this.button24.Margin = new System.Windows.Forms.Padding(0);
@@ -368,6 +391,7 @@
             // button25
             // 
             this.button25.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button25.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button25.Location = new System.Drawing.Point(850, 200);
             this.button25.Margin = new System.Windows.Forms.Padding(0);
@@ -380,6 +404,7 @@
             // button26
             // 
             this.button26.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button26.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button26.Location = new System.Drawing.Point(779, 200);
             this.button26.Margin = new System.Windows.Forms.Padding(0);
@@ -392,6 +417,7 @@
             // button27
             // 
             this.button27.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button27.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button27.Location = new System.Drawing.Point(920, 282);
             this.button27.Margin = new System.Windows.Forms.Padding(0);
@@ -404,6 +430,7 @@
             // button28
             // 
             this.button28.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button28.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button28.Location = new System.Drawing.Point(850, 282);
             this.button28.Margin = new System.Windows.Forms.Padding(0);
@@ -416,6 +443,7 @@
             // button29
             // 
             this.button29.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button29.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button29.Location = new System.Drawing.Point(779, 282);
             this.button29.Margin = new System.Windows.Forms.Padding(0);
@@ -428,6 +456,7 @@
             // button30
             // 
             this.button30.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button30.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button30.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button30.Location = new System.Drawing.Point(920, 367);
             this.button30.Margin = new System.Windows.Forms.Padding(0);
@@ -441,6 +470,7 @@
             // button31
             // 
             this.button31.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button31.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button31.Location = new System.Drawing.Point(850, 367);
             this.button31.Margin = new System.Windows.Forms.Padding(0);
@@ -453,6 +483,7 @@
             // button32
             // 
             this.button32.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button32.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button32.Location = new System.Drawing.Point(779, 367);
             this.button32.Margin = new System.Windows.Forms.Padding(0);
@@ -465,6 +496,7 @@
             // button33
             // 
             this.button33.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button33.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button33.Location = new System.Drawing.Point(709, 367);
             this.button33.Margin = new System.Windows.Forms.Padding(0);
@@ -477,6 +509,7 @@
             // button34
             // 
             this.button34.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button34.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button34.Location = new System.Drawing.Point(920, 492);
             this.button34.Margin = new System.Windows.Forms.Padding(0);
@@ -489,6 +522,7 @@
             // button35
             // 
             this.button35.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button35.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button35.Location = new System.Drawing.Point(850, 492);
             this.button35.Margin = new System.Windows.Forms.Padding(0);
@@ -501,6 +535,7 @@
             // button36
             // 
             this.button36.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button36.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button36.Location = new System.Drawing.Point(779, 492);
             this.button36.Margin = new System.Windows.Forms.Padding(0);
@@ -513,6 +548,7 @@
             // button37
             // 
             this.button37.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button37.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button37.Location = new System.Drawing.Point(920, 575);
             this.button37.Margin = new System.Windows.Forms.Padding(0);
@@ -525,6 +561,7 @@
             // button38
             // 
             this.button38.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button38.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button38.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button38.Location = new System.Drawing.Point(850, 575);
             this.button38.Margin = new System.Windows.Forms.Padding(0);
@@ -537,6 +574,7 @@
             // button39
             // 
             this.button39.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button39.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button39.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button39.Location = new System.Drawing.Point(779, 575);
             this.button39.Margin = new System.Windows.Forms.Padding(0);
@@ -549,6 +587,7 @@
             // button40
             // 
             this.button40.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button40.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button40.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button40.Location = new System.Drawing.Point(920, 658);
             this.button40.Margin = new System.Windows.Forms.Padding(0);
@@ -561,6 +600,7 @@
             // button41
             // 
             this.button41.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button41.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button41.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button41.Location = new System.Drawing.Point(850, 658);
             this.button41.Margin = new System.Windows.Forms.Padding(0);
@@ -573,6 +613,7 @@
             // button42
             // 
             this.button42.BackColor = System.Drawing.SystemColors.Desktop;
+            this.button42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button42.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button42.Location = new System.Drawing.Point(779, 658);
             this.button42.Margin = new System.Windows.Forms.Padding(0);
@@ -648,6 +689,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1046, 759);
             this.Controls.Add(this.button46);
             this.Controls.Add(this.button44);
@@ -699,7 +741,6 @@
             this.Cursor = System.Windows.Forms.Cursors.Cross;
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.MaximizeBox = false;
             this.Name = "Form1";
