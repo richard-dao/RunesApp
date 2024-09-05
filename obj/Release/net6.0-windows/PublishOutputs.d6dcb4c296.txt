@@ -1,0 +1,10 @@
+C:\Users\rdao2\source\repos\RunesApp\bin\Release\net6.0-windows\publish\RunesApp.exe
+C:\Users\rdao2\source\repos\RunesApp\bin\Release\net6.0-windows\publish\RunesApp.dll
+C:\Users\rdao2\source\repos\RunesApp\bin\Release\net6.0-windows\publish\RunesApp.deps.json
+C:\Users\rdao2\source\repos\RunesApp\bin\Release\net6.0-windows\publish\RunesApp.runtimeconfig.json
+C:\Users\rdao2\source\repos\RunesApp\bin\Release\net6.0-windows\publish\RunesApp.pdb
+C:\Users\rdao2\source\repos\RunesApp\bin\Release\net6.0-windows\publish\Newtonsoft.Json.dll
+C:\Users\rdao2\source\repos\RunesApp\bin\Release\net6.0-windows\publish\PoniLCU.dll
+C:\Users\rdao2\source\repos\RunesApp\bin\Release\net6.0-windows\publish\System.Management.dll
+C:\Users\rdao2\source\repos\RunesApp\bin\Release\net6.0-windows\publish\websocket-sharp-core.dll
+C:\Users\rdao2\source\repos\RunesApp\bin\Release\net6.0-windows\publish\runtimes\win\lib\net6.0\System.Management.dll

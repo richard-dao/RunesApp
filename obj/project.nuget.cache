@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "3kB11YzIcBBy/93l1VvVp2UBo6O/pBp2vNYO4R33nMg8f3wjqd7aRYemjIEJRvId3O6E77RA+xkbgP8iEPd9/w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rdao2\\source\\repos\\RunesApp\\RunesApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rdao2\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\rdao2\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\rdao2\\.nuget\\packages\\ponilcu\\1.0.3\\ponilcu.1.0.3.nupkg.sha512",
+    "C:\\Users\\rdao2\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
+    "C:\\Users\\rdao2\\.nuget\\packages\\system.management\\6.0.0\\system.management.6.0.0.nupkg.sha512",
+    "C:\\Users\\rdao2\\.nuget\\packages\\websocketsharp.core\\1.0.0\\websocketsharp.core.1.0.0.nupkg.sha512",
+    "C:\\Users\\rdao2\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\rdao2\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\rdao2\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\rdao2\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.27\\microsoft.netcore.app.host.win-x64.6.0.27.nupkg.sha512"
+  ],
+  "logs": []
+}
